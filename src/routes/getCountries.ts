@@ -15,7 +15,7 @@ routes.get('/countries/region/:region', async (req: Request, res: Response) => {
     if (!Object.values(Regioes).includes(region as Regioes)) {
       throw new AppError('Região inválida.', 400);
     }
-  
+  //comentario
     try {
       const response = await axios.get<ICountry[]>(
         `https://restcountries.com/v2/region/${region}?fields=name,region,capital,population,flags`
