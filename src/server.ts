@@ -3,7 +3,7 @@ import cors from 'cors';
 import { loggerMiddleware } from './middleware/loggerMiddleware';
 import { AppError } from './errors/AppError';
 import { errorHandler } from './middleware/errorHandler';
-import { routes } from './routes/getCountries'
+import { routes } from './routes/getCountriesbyName'
 
 export const app:Express = express();
 const port: number = 3000;
@@ -11,7 +11,7 @@ const port: number = 3000;
 app.use(loggerMiddleware)
 app.use(express.json());
 app.use(cors());
-app.use(routes)
+app.use(routes);
 app.use(errorHandler)
 	
 app.listen(port, () => {
